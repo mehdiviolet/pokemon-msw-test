@@ -1,0 +1,40 @@
+@use "../../styles//variables" as *;
+
+.card-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: $color-primary;
+  font-weight: 700;
+  padding: $spacing-l;
+  width: 80px;
+  //   border: 1px solid red;
+
+  img {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 4px;
+  }
+
+  &--isWarning {
+    background-color: $color-secondary;
+    color: $color-white;
+    width: 80px;
+
+    img {
+      filter: $svg-white;
+    }
+  }
+
+  &--isDefeated {
+    background-color: $color-disabled;
+    color: $color-white;
+    width: 80px;
+
+    img {
+      filter: $svg-white;
+    }
+  }
+}

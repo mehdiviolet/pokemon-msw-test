@@ -37,8 +37,11 @@ export interface PokemonDetail {
   extra_details: string;
   image_url: string;
 }
-
+export interface JobResponse {
+  job_id: string;
+}
 export type JobStatus = "idle" | "queued" | "running" | "done" | "failed";
+export type PokemonStatus = "default" | "isDefeated" | "isWarning";
 
 export interface JobStatusResponse {
   status: JobStatus;

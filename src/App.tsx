@@ -1,9 +1,20 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ListPage } from "./components/pages/ListPage";
+import Pokemondetailpage from "./components/pages/DetailPage/Pokemondetailpage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <ListPage />,
+  },
+  {
+    path: "/items/:id",
+    element: <Pokemondetailpage />,
+  },
+]);
+
 function App() {
-  return (
-    <>
-      <h1>Hi</h1>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

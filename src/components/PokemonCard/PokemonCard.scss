@@ -1,0 +1,44 @@
+@use "../../styles/variables" as *;
+
+.pokemon-card {
+  background: $color-white;
+  border-radius: $radius-md;
+  box-shadow: $shadow-medium;
+  overflow: hidden;
+  width: 100%;
+  max-width: 340px;
+  min-height: 300px;
+  font-family: $font-heading;
+
+  &__body {
+    padding: $spacing-xl;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    // color: $color-text;
+    // margin-bottom: $spacing-m;
+  }
+
+  &__description {
+    font-size: 0.85rem;
+    // color: $color-text-secondary;
+    line-height: 1.5;
+  }
+
+  &__footer {
+    padding: $spacing-l $spacing-xl;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $border-color-soft;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  &__rarity {
+    display: flex;
+    gap: 4px;
+  }
+}

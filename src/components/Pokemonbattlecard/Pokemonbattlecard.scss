@@ -1,0 +1,13 @@
+@use "../../styles/variables" as *;
+
+.pokemon-battle-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xl;
+  width: 100%;
+  max-width: 400px;
+  padding: $spacing-xl;
+  background-color: $color-background;
+  border-radius: $radius-lg;
+}

@@ -1,0 +1,49 @@
+@use "../../styles/variables" as *;
+
+.card-heading {
+  padding: $spacing-l $spacing-xl;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $color-white;
+  background-color: $color-primary;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: $transition-smooth;
+  width: 100%;
+  max-width: 340px;
+
+  &--isWarning {
+    background-color: $color-secondary;
+  }
+
+  &--isDefeated {
+    background-color: $color-disabled;
+  }
+
+  &__number {
+    font-family: $font-heading;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-l;
+    padding: $spacing-xs $spacing-xl;
+    background: $color-white-badge;
+    border-radius: $radius-lg;
+    font-family: $font-heading;
+    font-size: 0.85rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: $color-white;
+    border: $border-light;
+  }
+
+  &__icon {
+    width: $spacing-xl;
+    height: $spacing-xl;
+    object-fit: contain;
+    filter: $svg-white;
+  }
+}
