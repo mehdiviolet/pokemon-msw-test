@@ -1,0 +1,20 @@
+@use "../../styles//variables" as *;
+
+.card-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 340px;
+  background-color: rgba(gray, 0.3);
+  width: 340px;
+
+  &__warning {
+    background-color: $color-secondary;
+  }
+
+  &__dead {
+    background-color: $color-disabled;
+  }
+}

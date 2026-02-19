@@ -1,0 +1,22 @@
+@use "../../styles/variables" as *;
+.heading-container {
+  display: inline-flex;
+  // width: 340px;
+  // width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: wheat;
+  padding: 6px 4px;
+  background-color: $color-primary;
+  color: white;
+  font-family: $font-body;
+  font-size: 14px;
+
+  &.warning {
+    background-color: $color-secondary;
+  }
+
+  &.dead {
+    background-color: $color-disabled;
+  }
+}

@@ -1,0 +1,28 @@
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  //   background-color: sandybrown;
+  //   width: 100%;
+  //   max-width: 340px;
+  width: 340px;
+  border: 1px solid saddlebrown;
+
+  &__body {
+    padding: 4px 8px;
+    background-color: cadetblue;
+    // width: 100%;
+    p {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    span {
+      display: block;
+      width: 100%;
+      font-weight: 400;
+      background-color: saddlebrown;
+      word-wrap: break-word; // Spezza le parole lunghe
+      //   overflow-wrap: break-word;
+      //   white-space: normal;
+    }
+  }
+}

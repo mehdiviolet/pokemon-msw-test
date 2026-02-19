@@ -45,3 +45,4 @@ export interface JobStatusResponse {
   progress: number;
   health_points: number | null;
 }
+export type CardStates = "default" | "warning" | "dead";

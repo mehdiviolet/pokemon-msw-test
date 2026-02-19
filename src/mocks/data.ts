@@ -1,4 +1,4 @@
-import type { PokemonDetail, PokemonListItem } from "../Types/Pokemon";
+import type { PokemonDetail, PokemonListItem } from "../types/Pokemon";
 
 export const mockItems: PokemonListItem[] = [
   {

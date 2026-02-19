@@ -1,0 +1,33 @@
+@use "../../styles/variables" as *;
+
+.badge-container {
+  //   background-color: lighten($color-primary, 30);
+  //   background-color: rgba(gray, 0.7);
+  background-color: rgba(white, 0.3);
+  border-radius: 1000px;
+  padding: 2px;
+  display: inline-flex;
+  gap: 8px;
+  width: auto;
+  text-transform: uppercase;
+  align-items: center;
+  //   border: 1px solid gray;
+  //   width: auto;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   width: 100%;
+  span {
+    color: white;
+    padding-left: 3px;
+    font-family: $font-body;
+    letter-spacing: 1px;
+  }
+  img {
+    filter: $svg-white;
+    font-size: 2px;
+    width: 20px;
+    padding: 0;
+    // background-color: white;
+    // width: auto;
+  }
+}
