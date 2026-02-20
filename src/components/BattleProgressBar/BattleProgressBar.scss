@@ -1,3 +1,31 @@
+@use "../../styles/variables" as *;
+
 .battle-progress {
-  width: 340px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  &__bar {
+    background-color: gainsboro;
+    width: 100%;
+    height: 12px;
+    border-radius: 1000px;
+
+    overflow: hidden;
+  }
+
+  &__fill {
+    background-color: $color-primary;
+    width: 0px;
+    height: 100%;
+    transition: all ease 0.3s;
+  }
+
+  &__txt {
+    min-width: 38px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
 }
