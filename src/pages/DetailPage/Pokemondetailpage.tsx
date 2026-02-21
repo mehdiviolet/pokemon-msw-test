@@ -1,15 +1,14 @@
 import { Link, useParams } from "react-router-dom";
-import "./Pokemondetailpage.scss";
-import PokemonBattleCard from "../../Pokemonbattlecard/Pokemonbattlecard";
-import usePokemon from "../../../hooks/usePokemon";
-import { useBattle } from "../../../hooks/useBattle";
 import { useEffect } from "react";
+import "./Pokemondetailpage.scss";
+import usePokemon from "../../hooks/usePokemon";
+import { useBattle } from "../../hooks/useBattle";
+import PokemonBattleCard from "../../components/Pokemonbattlecard/Pokemonbattlecard copy";
 
 export default function Pokemondetailpage() {
   const { id } = useParams<{ id: string }>();
 
   const { pokemon, error, loading, updateHp } = usePokemon(id);
-  // const { battleResultHp, status } = useBattle();
   const { startBattle, status, progress, battleResultHp } = useBattle();
 
   useEffect(() => {

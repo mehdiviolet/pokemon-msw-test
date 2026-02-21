@@ -61,7 +61,7 @@ export const handlers = [
     if (jobData.hasFailed) {
       return HttpResponse.json<JobResponse>({
         status: "failed",
-        progress: 65,
+        progress: 99,
         health_points: null,
       });
     }
@@ -71,8 +71,9 @@ export const handlers = [
       const progress = Math.min(99, Math.floor(rowProgress));
 
       if (elapsed > 2500) {
-        // jobData.hasFailed = Math.random() > 0.5;
-        jobData.hasFailed = false;
+        jobData.hasFailed = Math.random() > 0.5;
+        // jobData.hasFailed = false;
+        // jobData.hasFailed = true;
       }
       return HttpResponse.json<JobResponse>({
         status: "running",

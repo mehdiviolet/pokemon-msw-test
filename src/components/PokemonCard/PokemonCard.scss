@@ -5,9 +5,18 @@
   //   width: 100%;
   //   max-width: 340px;
   width: 340px;
+  min-height: 450px;
   // border: 1px solid saddlebrown;
   border-radius: 10px;
   overflow: hidden;
+  // align-items: center;
+  justify-content: center;
+
+  &__failed {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+  }
 
   &__body {
     padding: 4px 8px;

@@ -1,5 +1,5 @@
 import { mockItems } from "../../mocks/data";
-import type { CardStates } from "../../types/Pokemon";
+import type { CardStates, JobStatus } from "../../types/Pokemon";
 import CardFooter from "../CardFooter/CardFooter";
 import CardHeading from "../cardheading/CardHeading";
 import CardStats from "../CardStats/CardStats";
@@ -13,6 +13,7 @@ interface PokemonCardProps {
   // title: string;
   // description: string;
   stateCard?: CardStates;
+  battleStatus: JobStatus;
 }
 
 const PokemonCard = ({
@@ -20,27 +21,37 @@ const PokemonCard = ({
   // description = "desc...",
   pokemon,
   stateCard,
+  battleStatus,
 }: PokemonCardProps) => {
   return (
     <div className="pokemon-card">
-      <CardHeading stateCard={stateCard} />
-      <ImageComponent
-        states={stateCard}
-        imgName="img"
-        imgUrl={mockItems[0].image_url}
-      />
+      {battleStatus !== "failed" ? (
+        <>
+          <CardHeading stateCard={stateCard} />
+          <ImageComponent
+            states={stateCard}
+            imgName="img"
+            imgUrl={mockItems[0].image_url}
+          />
 
-      <div className="pokemon-card__body">
-        <p>{pokemon.name}</p>
-        <span>{pokemon.short_description}</span>
-      </div>
-      <CardStats
-        lvValue={pokemon.level}
-        psValue={pokemon.vulnerability.value}
-        hpValue={pokemon.health_points}
-        status={stateCard}
-      />
-      <CardFooter icon="/assets/icons/water_drop.svg" rarity="pokemon_base" />
+          <div className="pokemon-card__body">
+            <p>{pokemon.name}</p>
+            <span>{pokemon.short_description}</span>
+          </div>
+          <CardStats
+            lvValue={pokemon.level}
+            psValue={pokemon.vulnerability.value}
+            hpValue={pokemon.health_points}
+            status={stateCard}
+          />
+          <CardFooter
+            icon="/assets/icons/water_drop.svg"
+            rarity="pokemon_base"
+          />
+        </>
+      ) : (
+        <p className="pokemon-card__failed">qulacosa è andato storto...</p>
+      )}
     </div>
   );
 };

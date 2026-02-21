@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { startBattleJob, getJobStatus } from "../services/pokemonService";
 import { type JobStatus } from "../types/Pokemon";
 
@@ -11,12 +11,12 @@ export const useBattle = () => {
 
   const timeoutRef = useRef<number | null>(null);
 
-  const stopPolling = () => {
+  const stopPolling = useCallback(() => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
     }
-  };
+  }, []);
 
   const startBattle = async (pokemonId: string) => {
     stopPolling();

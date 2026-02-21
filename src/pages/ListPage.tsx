@@ -6,28 +6,11 @@ import { CardPreview } from "../../components/CardPreview/CardPreview";
 // import "./ListPage.scss";
 import type { PokemonListItem } from "../../types/Pokemon";
 import { getPokemonList } from "../../services/pokemonService";
+import usePokemonList from "../hooks/usePokemonList";
 // import type { PokemonListItem } from "../Types/Pokemon";
 
 export const ListPage = () => {
-  const [items, setItems] = useState<PokemonListItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await getPokemonList();
-        setItems(data);
-      } catch (err) {
-        setError(true);
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
-
+  const { items, error, loading } = usePokemonList();
   return (
     <div className="list-page">
       {/* 1. HERO (Sempre visibile, anche con errore) */}

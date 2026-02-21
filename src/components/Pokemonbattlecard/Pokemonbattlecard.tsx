@@ -22,7 +22,7 @@ export default function PokemonBattleCard({
 }: PokemonBattleCardProps) {
   const getStatus = (): CardStates => {
     if (pokemon.health_points === 0) return "dead";
-    if (pokemon.health_points < 30) return "warning";
+    if (pokemon.health_points <= 20) return "warning";
     return "default";
   };
   // const {
@@ -58,8 +58,10 @@ export default function PokemonBattleCard({
         // description={pokemon.short_description}
         pokemon={pokemon}
         stateCard={getStatus()}
+        battleStatus={battleStatus}
         // battleError={battleError}
       />
+
       {battleStatus === "idle" ? (
         <p>Tutto è pronto. Inizia la sfida!</p>
       ) : (
