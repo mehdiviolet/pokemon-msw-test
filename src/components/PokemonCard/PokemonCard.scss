@@ -1,15 +1,17 @@
 .pokemon-card {
   display: flex;
   flex-direction: column;
-  //   background-color: sandybrown;
+  background-color: white;
   //   width: 100%;
   //   max-width: 340px;
   width: 340px;
-  border: 1px solid saddlebrown;
+  // border: 1px solid saddlebrown;
+  border-radius: 10px;
+  overflow: hidden;
 
   &__body {
     padding: 4px 8px;
-    background-color: cadetblue;
+    // background-color: cadetblue;
     // width: 100%;
     p {
       font-size: 18px;
@@ -19,7 +21,7 @@
       display: block;
       width: 100%;
       font-weight: 400;
-      background-color: saddlebrown;
+      // background-color: saddlebrown;
       word-wrap: break-word; // Spezza le parole lunghe
       //   overflow-wrap: break-word;
       //   white-space: normal;

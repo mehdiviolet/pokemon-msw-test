@@ -1,3 +1,4 @@
+import { mockItems } from "../../mocks/data";
 import type { CardStates } from "../../types/Pokemon";
 import CardFooter from "../CardFooter/CardFooter";
 import CardHeading from "../cardheading/CardHeading";
@@ -5,15 +6,19 @@ import CardStats from "../CardStats/CardStats";
 import ImageComponent from "../ImageComponent/ImageComponent";
 import "./PokemonCard.scss";
 
+import type { PokemonDetail } from "../../types/Pokemon";
+
 interface PokemonCardProps {
-  title: string;
-  description: string;
+  pokemon: PokemonDetail;
+  // title: string;
+  // description: string;
   stateCard?: CardStates;
 }
 
 const PokemonCard = ({
-  title = "Psy...",
-  description = "desc...",
+  // title = "Psy...",
+  // description = "desc...",
+  pokemon,
   stateCard,
 }: PokemonCardProps) => {
   return (
@@ -22,14 +27,19 @@ const PokemonCard = ({
       <ImageComponent
         states={stateCard}
         imgName="img"
-        imgUrl="https://assets.pokemon.com/assets/cms2/img/pokedex/full/060.png"
+        imgUrl={mockItems[0].image_url}
       />
 
       <div className="pokemon-card__body">
-        <p>{title}</p>
-        <span>{description}</span>
+        <p>{pokemon.name}</p>
+        <span>{pokemon.short_description}</span>
       </div>
-      <CardStats lvValue={15} psValue={100} hpValue={20} status={stateCard} />
+      <CardStats
+        lvValue={pokemon.level}
+        psValue={pokemon.vulnerability.value}
+        hpValue={pokemon.health_points}
+        status={stateCard}
+      />
       <CardFooter icon="/assets/icons/water_drop.svg" rarity="pokemon_base" />
     </div>
   );

@@ -40,6 +40,10 @@ export interface PokemonDetail {
 
 export type JobStatus = "idle" | "queued" | "running" | "done" | "failed";
 
+export interface JobResponse {
+  job_id: string;
+}
+
 export interface JobStatusResponse {
   status: JobStatus;
   progress: number;

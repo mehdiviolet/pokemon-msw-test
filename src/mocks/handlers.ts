@@ -71,7 +71,8 @@ export const handlers = [
       const progress = Math.min(99, Math.floor(rowProgress));
 
       if (elapsed > 2500) {
-        jobData.hasFailed = Math.random() > 0.5;
+        // jobData.hasFailed = Math.random() > 0.5;
+        jobData.hasFailed = false;
       }
       return HttpResponse.json<JobResponse>({
         status: "running",

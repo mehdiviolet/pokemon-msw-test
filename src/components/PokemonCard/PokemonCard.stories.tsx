@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import PokemonCard from "./PokemonCard";
+import { mockItemDetails } from "../../mocks/data";
 
 const meta = {
-  title: "Organism/Poke",
+  title: "Molecules/Poke",
   component: PokemonCard,
   //   decorators: [
   //     (Story) => (
@@ -12,9 +13,7 @@ const meta = {
   //     ),
   //   ],
   args: {
-    title: "Psy...",
-    description:
-      "...desc...desc...desc...desc......desc...desc...desc...desc......desc...desc...desc...desc......desc...desc...desc...desc......desc...desc...desc...desc...",
+    pokemon: mockItemDetails[0],
   },
 } satisfies Meta<typeof PokemonCard>;
 

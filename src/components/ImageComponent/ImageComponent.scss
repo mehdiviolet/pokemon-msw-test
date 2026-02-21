@@ -2,14 +2,15 @@
 
 .card-image {
   position: relative;
-  width: 340px;
+  // width: 340px;
   height: 200px;
+  overflow: hidden;
 
   &__img {
     position: absolute;
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
   }
 

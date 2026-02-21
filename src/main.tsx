@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import "./styles/main.scss";
+import { RouterProvider } from "react-router-dom";
+import routes from "./route/route.tsx";
 
 // Configurazione MSW (Mock Service Worker)
 async function enableMocking() {
@@ -15,7 +16,7 @@ async function enableMocking() {
 enableMocking().then(() => {
   ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-      <App />
+      <RouterProvider router={routes} />;
     </React.StrictMode>,
   );
 });
